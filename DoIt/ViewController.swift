@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = UITableViewCell();
         let task = tasks[indexPath.row]; // Fill cells with items in tasks
         if(task.important) {
-            cell.textLabel?.text = "!\(task.name)"; // If task is important, add ! in front of it
+            cell.textLabel?.text = "❗️\(task.name)"; // If task is important, add ! in front of it
         } else {
             cell.textLabel?.text = task.name; // Otherwise default to name
         }
@@ -55,5 +55,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return [task1, task2, task3];
     }
 
+    @IBAction func plusTapped(_ sender: Any) {
+        performSegue(withIdentifier: "addSegue", sender: nil)
+    }
 }
 
