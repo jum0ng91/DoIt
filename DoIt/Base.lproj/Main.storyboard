@@ -13,7 +13,7 @@
         <!--Do It-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="DoIt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="TasksViewController" customModule="DoIt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -46,6 +46,7 @@
                     <connections>
                         <outlet property="tableView" destination="7a0-Ms-h3U" id="o85-Mj-gaQ"/>
                         <segue destination="FeS-9R-apH" kind="show" identifier="addSegue" id="rIa-Ph-M30"/>
+                        <segue destination="Bap-Jg-pbk" kind="show" identifier="selectTaskSegue" id="ghq-ZP-huq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -116,7 +117,49 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jyh-ec-Iba" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1606" y="35"/>
+            <point key="canvasLocation" x="1850" y="35"/>
+        </scene>
+        <!--Complete Task View Controller-->
+        <scene sceneID="MWh-kB-tbi">
+            <objects>
+                <viewController id="Bap-Jg-pbk" customClass="CompleteTaskViewController" customModule="DoIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hon-Ma-Bhz"/>
+                        <viewControllerLayoutGuide type="bottom" id="SXl-6K-nut"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hYQ-sr-WbX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vaI-db-3os">
+                                <rect key="frame" x="157" y="84" width="61" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIl-ez-8Cx">
+                                <rect key="frame" x="154" y="139" width="67" height="30"/>
+                                <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="completeTapped:" destination="Bap-Jg-pbk" eventType="touchUpInside" id="Ygf-Qa-9Id"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FIl-ez-8Cx" firstAttribute="top" secondItem="vaI-db-3os" secondAttribute="bottom" constant="25" id="PlI-d5-M5T"/>
+                            <constraint firstItem="FIl-ez-8Cx" firstAttribute="centerX" secondItem="hYQ-sr-WbX" secondAttribute="centerX" id="pBU-Gp-Y3E"/>
+                            <constraint firstItem="vaI-db-3os" firstAttribute="centerX" secondItem="hYQ-sr-WbX" secondAttribute="centerX" id="vc1-M7-9BH"/>
+                            <constraint firstItem="vaI-db-3os" firstAttribute="top" secondItem="hon-Ma-Bhz" secondAttribute="bottom" constant="20" id="zcW-Bd-qKk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="taskLabel" destination="vaI-db-3os" id="hCW-tV-vqQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HNF-KV-NKl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2617" y="331"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xu2-nU-Y8D">
